@@ -26,5 +26,7 @@ public interface AddcartRepository extends JpaRepository<Addcart, Long> {
 
     @Query("SELECT a FROM Addcart a WHERE a.productid IN :productids")
     List<Addcart> findByProductid(@Param("productids") List<Long> productids);
+    
+    Addcart findByProductid(Long productid);
 }
 
