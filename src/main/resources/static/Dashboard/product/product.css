@@ -1,0 +1,89 @@
+@charset "UTF-8";
+.table-wrapper {
+            max-height: 400px; /* Adjust max height as needed */
+            overflow-y: auto; /* Enable vertical scroll */
+        }
+        td {
+            font-size: .8em;
+        }
+        .custom-table {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow */
+        }
+        .table thead th {
+            color: #fff; /* Header text color */
+            background-color: #343a40; /* Header background color */
+            border-color: #343a40; /* Header border color */
+            font-size: 14px; /* Header font size */
+            vertical-align: middle; /* Vertical alignment */
+        }
+        .table thead th:hover {
+            background-color: #23272b; /* Header hover background color */
+            border-color: #23272b; /* Header hover border color */
+        }
+        .table-bordered {
+            border-color: #dee2e6 !important; /* Table border color */
+        }
+        .table-bordered td, .table-bordered th {
+            border: 1px solid #dee2e6 !important; /* Table cell border */
+            font-size: 14px; /* Table cell font size */
+        }
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: #f8f9fa; /* Alternate row background color */
+        }
+        .table-striped tbody tr:hover {
+            background-color: #e9ecef; /* Hover row background color */
+        }
+        .table td, .table th {
+            text-align: center; /* Center align table data */
+        }
+        .dropdown-menu {
+            max-height: 200px; /* Max height for the search history dropdown */
+            overflow-y: auto; /* Enable vertical scroll */
+            width: 100%; /* Ensure full width */
+        }
+        .dropdown-item.highlight {
+            background-color: yellow; /* Highlight color */
+        }
+        /* Styling for success popup */
+.success-popup {
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    z-index: 1000; /* Ensure it's on top */
+    position: fixed;
+    top: 20px;
+    background-color: #5cb85c; /* Green color */
+    right: -300px; /* Start off-screen */
+    transition: right 0.5s ease-in-out; /* Slide animation */
+}
+
+/* Styling for horizontal loader */
+.horizontal-loader {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    animation: spin 1s infinite linear; /* Optional loader animation */
+    margin-left: 10px; /* Adjust as needed */
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+     /* Styling for shopping bag icon count badge */
+#cartItemCount {
+    position: absolute;
+    top: 7px;
+    right: 156px;
+    font-size: 8px;
+    padding: 3px 6px;
+    background: indianred;
+}
+        

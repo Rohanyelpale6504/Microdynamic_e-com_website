@@ -1,0 +1,49 @@
+@charset "UTF-8";
+ .edit-icon {
+      cursor: pointer;
+      color: #007bff;
+      transition: color 0.3s ease;
+    }
+    .edit-icon:hover {
+      color: #0056b3;
+    }
+    .add-btn {
+      right: 10px;
+      z-index: 1000; /* Ensure it's above the table */
+    }
+    .add-btn:hover {
+      text-decoration: none;
+      color: #fff;
+    }
+    /* Customize table header colors */
+    .table thead th {
+      color: #fff; /* Header text color */
+      background-color: #343a40; /* Header background color */
+      border-color: #343a40; /* Header border color */
+      font-size: 14px; /* Header font size */
+      vertical-align: middle; /* Vertical alignment */
+    }
+    .table thead th:hover {
+      background-color: #23272b; /* Header hover background color */
+      border-color: #23272b; /* Header hover border color */
+    }
+    .table-bordered {
+      border-color: #dee2e6 !important; /* Table border color */
+    }
+    .table-bordered td, .table-bordered th {
+      border: 1px solid #dee2e6 !important; /* Table cell border */
+      font-size: 14px; /* Table cell font size */
+    }
+    .table-striped tbody tr:nth-of-type(odd) {
+      background-color: #f8f9fa; /* Alternate row background color */
+    }
+    .table-striped tbody tr:hover {
+      background-color: #e9ecef; /* Hover row background color */
+    }
+    .table-wrapper {
+      max-height: 400px; /* Adjust max height as needed */
+      overflow-y: auto; /* Enable vertical scroll */
+    }
+    .highlight {
+      background-color: yellow;
+    }

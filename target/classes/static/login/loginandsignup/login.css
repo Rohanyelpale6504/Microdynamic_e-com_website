@@ -1,0 +1,84 @@
+@charset "UTF-8";
+body {
+    background-color: #cad8df;
+    color: #2C3E50;
+}
+
+.card0 {
+    box-shadow: 0px 4px 8px 0px #757575;
+    border-radius: 0;
+}
+
+.card2 {
+    margin: 0 40px;
+}
+
+.logo {
+    width: 226px;
+    height: 57px;
+    margin-top: 53px;
+    margin-left: 35px;
+}
+
+.image {
+    width: 360px;
+    height: 280px;
+}
+
+.border-line {
+    border-right: 1px solid #EEEEEE;
+}
+
+.facebook, .twitter, .linkedin {
+    font-size: 18px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.line {
+    height: 1px;
+    width: 45%;
+    background-color: #E0E0E0;
+    margin-top: 10px;
+}
+
+.or {
+    font-weight: bold;
+}
+
+.text-sm {
+    font-size: 14px !important;
+}
+
+input, textarea {
+    padding: 10px 12px;
+    border: 1px solid lightgrey;
+    border-radius: 2px;
+    margin-bottom: 5px;
+    width: 100%;
+    color: #2C3E50;
+    font-size: 14px;
+}
+
+input:focus, textarea:focus {
+    border-color: #304FFE;
+    outline: none;
+}
+
+.btn-blue {
+    background-color: #1A237E;
+    color: #fff;
+    width: 150px;
+    border-radius: 2px;
+}
+
+.btn-blue:hover {
+    background-color: #000;
+}
+
+.bg-blue {
+    background-color: #1A237E;
+    color: #fff;
+}

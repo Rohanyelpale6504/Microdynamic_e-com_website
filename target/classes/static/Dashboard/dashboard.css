@@ -1,0 +1,34 @@
+@charset "UTF-8";
+  .dashboard-col {
+            border: 1px solid #dee2e6; /* Border color */
+            border-radius: 1rem; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+            transition: transform 0.2s, color 0.2s; /* Smooth hover effect */
+        }
+        .dashboard-col:hover {
+            transform: scale(1.05);
+            color: white;
+        }
+        .dashboard-col a {
+            display: block;
+            color: white; /* Inherit text color */
+            text-decoration: none; /* Remove underline */
+            padding: 20px;
+            height: 100%;
+            font-weight: bold; /* Ensure the link covers the entire column */
+        }
+        .dashboard-col:hover h3, 
+        .dashboard-col:hover p, 
+        .dashboard-col:hover span {
+            color: white; /* Change text color to white on hover */
+        }
+        .lightred-gradient {
+            background: linear-gradient(135deg, #ff9999, #cc0000);
+        }
+        .lightgreen-gradient {
+            background: linear-gradient(135deg, #99ff99, #009933);
+        }
+        .lightblue-gradient {
+            background: linear-gradient(135deg, #9999ff, #000099);
+        }
+        
