@@ -33,8 +33,8 @@ public class LoginController {
 	
 	 
    @PostMapping("/add")
-   public String addUsernameAndPassword(@RequestParam String username,@RequestParam String mobile, @RequestParam String password, Model model) {
-       boolean isAdded = services.addUsernameAndPassword(username,mobile, password);
+   public String addUsernameAndPassword(@RequestParam String name,@RequestParam String address,@RequestParam String username,@RequestParam String mobile, @RequestParam String password, Model model) {
+       boolean isAdded = services.addUsernameAndPassword(name,address,username,mobile, password);
        if(isAdded) {
     	   return "redirect:/";
        }
@@ -44,37 +44,41 @@ public class LoginController {
         // assuming there's a view named addResult
 	
    }
-	@PostMapping("/login")
-	public String login(Login login,HttpSession session,Model model) {
-		boolean isValid=services.loginValid(login);
-		if(isValid) {
-			session.setAttribute("username", login.getUsername());
-			model.addAttribute("count",dataservice.countData());
-			// Retrieve updated customers by current date
-			LocalDate currentDate = LocalDate.now();
-            long currentDateCustomers = customerservice.getCustomersByDate(currentDate);
-            model.addAttribute("currentDateCustomers", currentDateCustomers);
-            
-            //for vendor
-            LocalDate currentDate1 = LocalDate.now();
-            model.addAttribute("vendorcount",dashboardservice.countData1() );
-            long currentDateVendor=vendorService.getVendorsByDate(currentDate1);
-            model.addAttribute("currentDateVendor", currentDateVendor);
-        	//for product
-            model.addAttribute("productcount",dashboardservice.countData2() );
-            long currentDateProduct=vendorService.getVendorsByDate(currentDate1);
-            model.addAttribute("currentDateProduct", currentDateProduct);
-			return "mainpage/home";
-			
-		
-			
-		}
-		else {
-			model.addAttribute("error", "Invalid username or password");
-			return "redirect:/";
-		}
-	}
-	
+   @PostMapping("/login")
+   public String login(Login login, HttpSession session, Model model) {
+       boolean isValid = services.loginValid(login);
+       if (isValid) {
+           session.setAttribute("username", login.getUsername());
+           
+           // Get login ID
+           Integer loginId = services.getLoginId(login.getUsername(), login.getPassword());
+           session.setAttribute("loginId", loginId); // Store in session if needed
+           
+           model.addAttribute("count", dataservice.countData());
+
+           // Retrieve updated customers by current date
+           LocalDate currentDate = LocalDate.now();
+           long currentDateCustomers = customerservice.getCustomersByDate(currentDate);
+           model.addAttribute("currentDateCustomers", currentDateCustomers);
+           
+           // For vendor
+           LocalDate currentDate1 = LocalDate.now();
+           model.addAttribute("vendorcount", dashboardservice.countData1());
+           long currentDateVendor = vendorService.getVendorsByDate(currentDate1);
+           model.addAttribute("currentDateVendor", currentDateVendor);
+           
+           // For product
+           model.addAttribute("productcount", dashboardservice.countData2());
+           long currentDateProduct = vendorService.getVendorsByDate(currentDate1);
+           model.addAttribute("currentDateProduct", currentDateProduct);
+
+           return "mainpage/home";
+       } else {
+           model.addAttribute("error", "Invalid username or password");
+           return "redirect:/";
+       }
+   }
+
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
 		session.invalidate();
