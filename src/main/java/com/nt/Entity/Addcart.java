@@ -37,5 +37,7 @@ public class Addcart {
 	private String paymenttype;
 	@Column(name="totalpayment")
 	private double totalpayment;
+	@Column(name="totalproduct")
+	private Long totalproduct;
 
 }

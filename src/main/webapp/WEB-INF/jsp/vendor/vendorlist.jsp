@@ -9,8 +9,8 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <!-- Font Awesome for icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <!-- Custom CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <!-- Custom CSS -->
   <link rel="stylesheet" type="text/css" href="Dashboard/vendor/vender.css" />
   <style>
     .badge {
@@ -91,7 +91,7 @@
               <td>${company.date}</td>
               <td>
                 <a href="#" onclick="editCompany('${company.id}', '${company.name}', '${company.mobile}', '${company.officemobile}', '${company.address}', '${company.gstno}', '${company.companyname}', '${company.businessnature}', '${company.turnover}', '${company.service}', '${company.product}', '${company.creditlimit}', '${company.status}')" data-toggle="modal" data-target="#popupModal" style="text-decoration: none; color: black;">
-                  <i class="fas fa-edit edit-icon" title="Edit"></i>
+                  <i class="fa fa-pencil" aria-hidden="true" style="color: #000"></i>
                 </a>
               </td>
             </tr>

@@ -7,8 +7,8 @@
     <meta charset="UTF-8">
     <title>Product List</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="Dashboard/product/product.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link rel="stylesheet" type="text/css" href="Dashboard/product/product.css">
     <style>
         .alert-popup {
             position: fixed;
@@ -96,11 +96,11 @@
 
     <!-- Success and Error Messages -->
     <div id="successMessage" class="alert  alert-popup" style="background: lightgreen">
-        <i class="fas fa-check-circle"></i> ${success}
+        <i class="fa fa-check-circle" aria-hidden="true"></i> ${success}
         <div class="loading-bar"></div>
     </div>
     <div id="errorMessage" class="alert alert-danger warning alert-popup" style="background: lightorange;">
-        <i class="fas fa-exclamation-triangle"></i> ${error}
+        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> ${error}
         <div class="loading-bar" style="background: red"></div>
     </div>
 
@@ -137,7 +137,7 @@
                             <td>${product.rating}</td>
                             <td>
                                 <a href="#" onclick="fillProductModal('${product.id}', '${product.name}', '${product.picture}', '${product.summary}', '${product.quantity}', '${product.price}', '${product.available}', '${product.rating}')" data-toggle="modal" data-target="#popupForm">
-                                    <i class="fas fa-edit edit-icon" style="color: #000;" title="Edit"></i>
+                                    <i class="fa fa-pencil" aria-hidden="true" style="color: #000"></i>
                                 </a>
                             </td>
                             <td>

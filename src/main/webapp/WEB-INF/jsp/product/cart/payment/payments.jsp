@@ -197,9 +197,9 @@
                     </div>
                     <div class="form-field">
                         <!-- Foreach loop to iterate through product IDs -->
-                        <c:forEach var="product" items="${cartData}">
-                            <input type="hidden" name="productid" value="${product.productid}" readonly>
-                        </c:forEach>
+                        
+                            <input type="hidden" id="totalproduct" name="totalproduct" value="${payment.totalproduct}" readonly>
+                       
                     </div>
                     <div class="main-contents">
                         <div class="success-icon">&#10004;</div>

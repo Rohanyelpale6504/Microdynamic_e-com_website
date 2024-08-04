@@ -40,6 +40,13 @@
                         <h3><center>Registration</center></h3>
                     </div>
                     <div class="row px-3">
+                        <label class="mb-1"><h6 class="mb-0 text-sm">Name</h6></label>
+                        <input class="mb-4 form-control" type="text" name="name" placeholder="Enter fullname" required>
+                    
+                        <label class="mb-1"><h6 class="mb-0 text-sm">Address</h6></label>
+                        <input class="mb-4 form-control" type="text" name="address" placeholder="Enter address" required>
+                    </div>
+                    <div class="row px-3">
                         <label class="mb-1"><h6 class="mb-0 text-sm">Email Address</h6></label>
                         <input class="mb-4 form-control" type="email" name="username" placeholder="Enter a valid email address" required>
                     </div>

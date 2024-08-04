@@ -45,11 +45,12 @@ public class HandelPaymentService {
 //	        }
 //	    }
 
-	  public void updateAllCarts(double totalpayment, String paymenttype) {
+	  public void updateAllCarts(double totalpayment, String paymenttype,Long totalproduct) {
 	        List<Addcart> carts = addcartrepository.findAll(); // Retrieve all records
 	        for (Addcart cart : carts) {
 	            cart.setTotalpayment(totalpayment);
 	            cart.setPaymenttype(paymenttype);
+	            cart.setTotalproduct(totalproduct);
 	        }
 	        addcartrepository.saveAll(carts); // Save all updated records
 	    }

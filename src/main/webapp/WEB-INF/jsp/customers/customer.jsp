@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <title>Table with JSTL</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="Dashboard/customer/customers.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="Dashboard/customer/customers.css">
     <style>
         /* Custom styles can be added here */
         .table-wrapper {
@@ -95,7 +95,7 @@
                         <td>
                             <div class="dropdown">
                                 <a class="edit-icon ml-2" href="#" onclick="editUser('${user.id}','${user.image}', '${user.name}', '${user.city}', '${user.mobile}')" data-toggle="modal" data-target="#updateModal">
-                                    <i class="fas fa-edit"></i> Edit
+                                    <i class="fa fa-pencil" aria-hidden="true" style="color: #000"></i>
                                 </a>
                             </div>
                         </td>

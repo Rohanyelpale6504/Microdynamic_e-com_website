@@ -27,35 +27,28 @@ public class HandelPaymentController {
     private AddcartService addcartservice;
 	
 	@GetMapping("/paymentform")
-	public String paymentForm() {
-		return "product/cart/paymentgetway/paymentform";
+	public String paymentForm(Model model, Addcart addcarts) {
+	    List<Addcart> cartData = addcartservice.cartList(addcarts);
+	    int cartcount = (int) addcartservice.countData();
+	    double totalPayment = cartData.stream().mapToDouble(Addcart::getTotalpayment).sum();
+	    
+	    model.addAttribute("cartData", cartData);
+	    model.addAttribute("cartcount", cartcount);
+	    model.addAttribute("totalPayment", totalPayment);
+	    
+	    return "product/cart/paymentgetway/paymentform";
 	}
+
 	
 	
-	
-//	  @PostMapping("/addcarts")
-//	    public String addCart(@ModelAttribute Addcart addcart, Model model) {
-//	        // Save or update the cart details
-//	        Addcart savedCart = handelpaymentsarvice.saveOrUpdateCart(addcart);
-//
-//	        // Add attributes to the model to display success message or other info
-//	        model.addAttribute("message", "Cart details saved successfully!");
-//	        model.addAttribute("addcart", savedCart);
-//
-//	        // Return the view name to display after saving
-//	        return "redirect:/paymentform"; // JSP view name for success page
-//	    }
-	
+
 	
 	 @PostMapping("/addcarts")
 	    public String updateAllCarts(@ModelAttribute Addcart addcart, Model model) {
-	        // Update all cart records with the given totalpayment and paymenttype
-		 handelpaymentsarvice.updateAllCarts(addcart.getTotalpayment(), addcart.getPaymenttype());
-
-	        // Add attributes to the model to display success message or other info
+	       handelpaymentsarvice.updateAllCarts(addcart.getTotalpayment(), addcart.getPaymenttype(),addcart.getTotalproduct());
+          
 	        model.addAttribute("message", "All carts updated successfully!");
 
-	        // Return the view name to display after saving
 	        return "redirect:/paymentform"; // JSP view name for success page
 	    }
 	
@@ -65,7 +58,7 @@ public class HandelPaymentController {
 	
 	 @GetMapping("/paymentSuccess")
 	    public String getLastInsertedPayment(Model model,Addcart addcarts ) {
-
+          
 	        model.addAttribute("cartData", addcartservice.cartList(addcarts));
 	        HandelPayment lastInsertedPayment = handelpaymentsarvice.findLastPayment();
 	        model.addAttribute("payment", lastInsertedPayment);
@@ -83,6 +76,15 @@ public class HandelPaymentController {
 		}
 	        return "redirect:/paymentSuccess"; // Adjust the view name accordingly
 	    }
+	  
+	  
+	  //show invoice page
+	  @GetMapping("/invoicedetails")
+	  public String invoiceDetails() {
+		  return "product/cart/invoice/invoicetable";
+	  }
+	  
+	  
 	  
 	  
 	  

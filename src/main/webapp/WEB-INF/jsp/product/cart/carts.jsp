@@ -7,8 +7,8 @@
     <meta charset="UTF-8">
     <title>Shopping Cart</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="Dashboard/product/product.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link rel="stylesheet" type="text/css" href="Dashboard/product/product.css">
     <style>
         .counter {
             display: flex;
@@ -202,7 +202,7 @@
     <h2>Order Summary</h2>
     <p>Total Items: <span style="margin-left: 15em">${cartcount}</span></p><hr>
     <h3>Total Cart Price: <span id="cartTotal" style="margin-left: 8em">0.00</span></h3> 
-    <button class="btn btn-proceed-to-buy btn-success" type="button"  onclick="proceedToBuy()">Proceed To Buy</button>
+    <a href="#" class="btn btn-proceed-to-buy btn-success" type="button"  onclick="proceedToBuy()">Proceed To Buy</a>
 </div>
 </div>
 </div>
